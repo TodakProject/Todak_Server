@@ -1,8 +1,7 @@
 package com.td.todak.oauth.handler;
 
 import com.td.todak.api.entity.user.UserRefreshToken;
-import com.td.todak.api.repository.UserRefreshTokenRepository;
-import com.td.todak.api.repository.UserRepository;
+import com.td.todak.api.repository.user.UserRefreshTokenRepository;
 import com.td.todak.config.properties.AppProperties;
 import com.td.todak.oauth.entity.ProviderType;
 import com.td.todak.oauth.entity.RoleType;

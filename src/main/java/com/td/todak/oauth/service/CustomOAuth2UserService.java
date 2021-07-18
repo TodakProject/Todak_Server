@@ -2,7 +2,7 @@ package com.td.todak.oauth.service;
 
 import com.td.todak.api.entity.user.User;
 import com.td.todak.api.entity.user.UserType;
-import com.td.todak.api.repository.UserRepository;
+import com.td.todak.api.repository.user.UserRepository;
 import com.td.todak.oauth.entity.ProviderType;
 import com.td.todak.oauth.entity.RoleType;
 import com.td.todak.oauth.entity.UserPrincipal;

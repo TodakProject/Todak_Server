@@ -1,7 +1,7 @@
 package com.td.todak.oauth.service;
 
 import com.td.todak.api.entity.user.User;
-import com.td.todak.api.repository.UserRepository;
+import com.td.todak.api.repository.user.UserRepository;
 import com.td.todak.oauth.entity.UserPrincipal;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
