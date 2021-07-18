@@ -1,4 +1,4 @@
-package com.td.todak.api.repository;
+package com.td.todak.api.repository.user;
 
 import com.td.todak.api.entity.user.UserRefreshToken;
 import org.springframework.data.jpa.repository.JpaRepository;

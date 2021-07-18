@@ -1,6 +1,6 @@
 package com.td.todak.config.security;
 
-import com.td.todak.api.repository.UserRefreshTokenRepository;
+import com.td.todak.api.repository.user.UserRefreshTokenRepository;
 import com.td.todak.config.properties.AppProperties;
 import com.td.todak.config.properties.CorsProperties;
 import com.td.todak.oauth.filter.TokenAuthenticationFilter;

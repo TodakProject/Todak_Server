@@ -1,7 +1,7 @@
-package com.td.todak.api.auth.controller;
+package com.td.todak.api.controller.auth;
 
 import com.td.todak.api.entity.user.UserRefreshToken;
-import com.td.todak.api.repository.UserRefreshTokenRepository;
+import com.td.todak.api.repository.user.UserRefreshTokenRepository;
 import com.td.todak.common.ApiResponse;
 import com.td.todak.config.properties.AppProperties;
 import com.td.todak.config.version.ApiVersion;
