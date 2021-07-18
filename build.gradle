@@ -1,0 +1,72 @@
+plugins {
+    id 'org.springframework.boot' version '2.5.2'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+group = 'com.td'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+def DEFAULT_PROFILE = "local"
+allprojects {
+    ext.profile =  (!project.hasProperty('profile') || !profile) ? DEFAULT_PROFILE : profile
+
+    println "profile: ${profile}"
+
+    sourceSets {
+        main {
+            resources {
+                srcDirs "src/main/resources", "src/main/resources-${profile}"
+            }
+        }
+    }
+}
+
+bootJar {
+    duplicatesStrategy(DuplicatesStrategy.INHERIT)
+}
+
+repositories {
+    mavenCentral()
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation "io.springfox:springfox-boot-starter:3.0.0"
+    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.0'
+    implementation 'org.springframework.boot:spring-boot-starter-log4j2'
+    implementation 'io.jsonwebtoken:jjwt-api:0.11.2'
+    implementation 'jakarta.xml.bind:jakarta.xml.bind-api:2.3.2'
+    implementation 'com.github.ulisesbocchio:jasypt-spring-boot-starter:3.0.3'
+    implementation 'org.bouncycastle:bcprov-jdk15on:1.64'
+    implementation 'io.springfox:springfox-swagger2:3.0.0'
+    implementation 'io.springfox:springfox-swagger-ui:3.0.0'
+    runtime 'io.jsonwebtoken:jjwt-impl:0.11.2'
+    runtime 'io.jsonwebtoken:jjwt-jackson:0.11.2'
+    compileOnly 'org.projectlombok:lombok'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+    runtimeOnly 'mysql:mysql-connector-java'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.security:spring-security-test'
+}
+
+configurations {
+    all*.exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
+    all*.exclude group: 'org.springframework.boot', module: 'logback-classic'
+}
+
+test {
+    useJUnitPlatform()
+}
